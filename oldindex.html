@@ -1,11 +1,27 @@
 <html>
+<!-- credit goes to Ezra Miller for the background: https://github.com/ezmill/puddle -->
 <head>
-	<title>frame differencing</title>
+  <title>it's him, john deer</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jacquard+12&display=swap" rel="stylesheet">
+  <meta name="robots" content="noindex">
 	<style>
 		body{
 			margin: 0;
       /*cursor:none;*/
 		}
+    h1.jacquard-12-regular {
+    font-family: "Jacquard 12", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 60px;
+    position: absolute;
+    bottom: 1%;
+    right: 32%;
+    }
 	</style>
 </head>
 <body>
@@ -28,7 +44,7 @@ void main() {
         gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
     }
 </script>
-<script id="diffFs">
+<script id="diffFs" type="x-fragment/x-shader">
 uniform sampler2D texture;
 uniform sampler2D texture2;
 uniform sampler2D texture3;
@@ -66,7 +82,7 @@ void main(){
 } 
 
 </script>
-<script id="flowFs">
+<script id="flowFs" type="x-fragment/x-shader">
    
     uniform vec2 resolution;
     uniform float time;
@@ -112,7 +128,7 @@ void main(){
       gl_FragColor = vec4(col, 1.0);
     }
 </script>
-<script id="chromaFs">
+<script id="chromaFs" type="x-fragment/x-shader">
     uniform sampler2D texture;
     uniform float time; // seconds
     varying vec2 vUv;
@@ -155,7 +171,7 @@ void main(){
       gl_FragColor = c;
     }
 </script>
-  <script id="chromaFs2">
+  <script id="chromaFs2" type="x-fragment/x-shader">
     uniform sampler2D texture;
     uniform float time; // seconds
     varying vec2 vUv;
@@ -387,7 +403,7 @@ void main() {
   gl_FragColor = vec4((input0/kernelWeight).rgb, 1.0);
 }
 </script>
-<script id="colorFs">
+<script id="colorFs" type="x-fragment/x-shader">
 uniform sampler2D texture;
 varying vec2 vUv;
 
@@ -756,5 +772,7 @@ void main(){
 <script src="OrbitControls.js"></script>
 <script src="dat.gui.min.js"></script>
 <script src="main.js"></script>
+<img src="johndeer.jpg" class="imtip">
+<h1 class="jacquard-12-regular">nalnalas</p>
 </body>
 </html>
