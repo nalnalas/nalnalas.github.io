@@ -44,7 +44,7 @@ void main() {
         gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
     }
 </script>
-<script id="diffFs">
+<script id="diffFs" type="x-fragment/x-shader">
 uniform sampler2D texture;
 uniform sampler2D texture2;
 uniform sampler2D texture3;
@@ -82,7 +82,7 @@ void main(){
 } 
 
 </script>
-<script id="flowFs">
+<script id="flowFs" >
    
     uniform vec2 resolution;
     uniform float time;
