@@ -128,7 +128,7 @@ void main(){
       gl_FragColor = vec4(col, 1.0);
     }
 </script>
-<script id="chromaFs">
+<script id="chromaFs" type="x-fragment/x-shader">
     uniform sampler2D texture;
     uniform float time; // seconds
     varying vec2 vUv;
@@ -171,7 +171,7 @@ void main(){
       gl_FragColor = c;
     }
 </script>
-  <script id="chromaFs2">
+  <script id="chromaFs2" type="x-fragment/x-shader">
     uniform sampler2D texture;
     uniform float time; // seconds
     varying vec2 vUv;
@@ -403,7 +403,7 @@ void main() {
   gl_FragColor = vec4((input0/kernelWeight).rgb, 1.0);
 }
 </script>
-<script id="colorFs">
+<script id="colorFs" type="x-fragment/x-shader">
 uniform sampler2D texture;
 varying vec2 vUv;
 
