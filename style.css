@@ -4,6 +4,6 @@ div {
   }
   .imtip {
     position: absolute;
-    bottom: 25%;
-    right: 25%;
+    top: 50%;
+    width: 100%;
   }
